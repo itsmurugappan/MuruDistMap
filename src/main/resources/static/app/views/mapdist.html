@@ -1,0 +1,73 @@
+
+<table class="table">
+    <tr>
+        <th>Origins</th>
+        <th>Destinations</th>
+    </tr>
+    <tr>
+        <td >
+			<div ng-repeat="o in locations.origins" class="input-group" ng-form name="origForm">
+		  		<input name="orig" type = "text" class="form-control input-sm" id="inputSmall" ng-model="o.o" ng-maxlength="maxlength" ng-minlength="minlength">
+				<span class="input-group-btn">
+              		<button class="btn btn-success btn-add" type="button" ng-click="addOrigin()" ng-show="$last">
+                    	<span class="glyphicon glyphicon-plus"></span>
+                	</button>
+              		<button class="btn btn-danger btn-remove" type="button" ng-click="deleteOrigin($index)" ng-show="!$last" >
+                    	<span class="glyphicon glyphicon-minus"></span>
+                	</button>
+                </span>
+                <span class="error" ng-show="origForm.orig.$error.maxlength">Too long!</span>
+			</div>
+		</td>
+        <td >
+			<div ng-repeat="d in locations.dest" class="input-group" ng-form name="destForm">
+				<input name = "dest" type = "text" class="form-control input-sm" id="inputSmall" ng-model="d.d" ng-maxlength="maxlength" ng-minlength="minlength">
+				<span class="input-group-btn">
+              		<button class="btn btn-success btn-add" type="button" ng-click="addDest()" ng-show="$last">
+                    	<span class="glyphicon glyphicon-plus"></span>
+                	</button>
+              		<button class="btn btn-danger btn-remove" type="button" ng-click="deleteDest($index)" ng-show="!$last" >
+                    	<span class="glyphicon glyphicon-minus"></span>
+                	</button>
+                </span>
+                <span class="error" ng-show="destForm.dest.$error.maxlength">Too long!</span>
+			</div>
+		</td>
+    </tr>
+</table>
+        
+<div>
+	<button ng-click="getDistance()" class="btn btn-info" role="button" id="btn">Get Distance</button>
+</div>
+<br/>
+<div ng-show="showResults">
+	<div ng-repeat="add in results.origin_addresses">
+		<div class="panel panel-primary" >
+			<span><h4><b>Origin : </b>{{add}}</h4></span>
+			<div ng-repeat="dest in results.rows[$index].elements">
+                <div class="row" ng-show="dest.status == 'OK'"> 
+                    <div class="col-sm-7" style="background-color:lavender;">
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                        Destination:{{results.destination_addresses[$index]}}
+                    </div>
+			        <div class="col-sm-2" style="background-color:lavenderblush;">
+                        <span class="glyphicon glyphicon-road"></span>
+                        Distance:{{dest.distance.text}}
+                    </div>
+			        <div class="col-sm-3" style="background-color:lavender;">
+                        <span class="glyphicon glyphicon-time"></span>
+                        Duration:{{dest.duration.text}}
+                    </div>
+                </div>
+                <div ng-show="dest.status != 'OK'" class="row">
+                    No results to show for destination Address:<span style="background-color: #FFFF00">{{locations.dest[$index].d}}</span>. Please enter a valid address
+                </div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<br/>
+<div>
+	<button ng-click="clearResults()" class="btn btn-info" role="button" ng-show="showResults">Clear Results</button>
+</div>

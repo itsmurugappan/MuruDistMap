@@ -1,0 +1,36 @@
+<!doctype html>
+<html  id="ng-app" ng-app="distApp">
+<head>
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Distance App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="styles/toastr.min.css" rel="stylesheet">
+	<link href="styles/styles.css" rel="stylesheet" type="text/css" >
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+	<script src="scripts/toastr.min.js"></script>
+    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+
+	
+    <script src="app/app.js"></script>
+    <script src="app/controllers/distcontroller.js"></script>
+    <script src="app/services/mapDistFactory.js"></script>
+</head>
+<body>
+    <div id="container">
+         <div class="jumbotron text-center">
+             <h1>Google Distance Matrix API</h1></div>
+  		<div ng-view></div>
+ 	</div>
+</body>
+<footer class="container-fluid text-center ">
+	<!--<p>Footer Goes Here</p>
+	<p>For more info visit our <a href="https://github.com/itsmurugappan/MuruDistMap" >Github page</a></p> -->
+</footer>
+</html>

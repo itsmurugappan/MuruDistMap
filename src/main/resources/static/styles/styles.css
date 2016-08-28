@@ -1,0 +1,84 @@
+
+th {
+    text-align: center;
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+#container{
+    width: 100%;
+   /* border: 1px solid grey;*/
+    
+    margin: 0px;
+
+}
+
+h1{
+    text-align: center;
+       margin-top:-25px;
+    
+}
+
+h2{
+    text-align: left;
+    margin-left:0.5%;
+    
+}
+
+h4{
+   margin-left:0.5%;
+    
+}
+
+body {
+  border: 2px solid grey;
+  border-radius:4px;
+  width:80%;
+  height:90%;
+  display:block;
+ 
+margin-left: 10%;
+}
+
+.jumbotron {
+    height: 40px;
+    background-color: brown;
+color: ghostwhite;
+font-family: "Times New Roman", Georgia, Serif;
+    font-size: 30px;
+}
+
+
+.jumbotron h1{
+    font-size: 40px;
+    
+}
+
+.loading-dialog {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 0, 0, 0, .2 ) url('../app/images/loader.gif') 50% 50% no-repeat;
+}
+
+.img-responsive {
+	margin-left: 3%;
+}
+
+.btn{
+    margin-left:3%;
+    margin-bottom: 1%;  
+}
+
+.row {
+    margin-left:0.15%;
+    margin-right: 0.15%;
+}
+
+.panel{
+    border:0px;
+}
