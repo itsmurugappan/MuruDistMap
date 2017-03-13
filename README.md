@@ -22,7 +22,7 @@
 # Example Input: Origins: A,B,C, Destinations: E,F,G Output: Distance and Time for A to E,F and G, B to E,F and G, C to E,F and G.
 ```
 
-### Validations:
+#### Validations:
 
 ```
 • Origin and Destination Length are restricted to 2 to 100 characters 
